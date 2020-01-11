@@ -1,0 +1,79 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Looking 4 Mage",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "fix:ts": "tslint -p . --fix",
+    "lint:ts": "tslint --format codeFrame -p .",
+    "start": "tsc && node ./dist/app.js",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/looking4mage/frontend.git"
+  },
+  "keywords": [
+    "looking",
+    "for",
+    "mage"
+  ],
+  "author": "Looking 4 Mage",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/looking4mage/frontend/issues"
+  },
+  "homepage": "https://github.com/looking4mage/frontend#readme",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "engines": {
+    "node": "10.x.x",
+    "npm": "6.x.x"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "index.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "<rootDir>/src/**/*.test.+(ts|tsx|js|jsx)"
+    ]
+  }
+}
