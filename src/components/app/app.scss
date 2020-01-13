@@ -1,9 +1,9 @@
-@import "../../styles/variables";
+@import "../../styles/colors";
 
-body {
-  background-color: blue;
-}
-
-.app {
-  color: yellow;
+.c-app {
+  display: grid;
+  height: 100%;
+  grid-template-rows: 100px 1fr 100px;
+  background-color: $cp-main-blue-dark;
+  width: 100%;
 }

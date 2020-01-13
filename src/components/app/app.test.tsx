@@ -1,12 +1,16 @@
-import {shallow} from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
-
-import {App} from './app';
+import { MemoryRouter } from 'react-router';
+import { MainUnauthorized } from '../main-unauthorized';
+import { App } from './app';
 
 describe(App, () => {
-  it('should parse component correctly', () => {
-    const markup = shallow(<App/>);
-    expect(markup.html()).toContain('app');
-    expect(markup.find('h1').html()).toContain('App');
+  it('check if main page for unauthorized users is loading', () => {
+    const wrapper = mount(
+      <MemoryRouter initialEntries={['/']}>
+        <App/>
+      </MemoryRouter>,
+    );
+    expect(wrapper.find(MainUnauthorized)).toHaveLength(1);
   });
 });
