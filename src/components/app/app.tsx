@@ -1,4 +1,7 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
+
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { MainUnauthorized } from '../main-unauthorized';
 import './app.scss';
 
 interface IAppProperties {
@@ -7,8 +10,14 @@ interface IAppProperties {
 
 export function App(_props: IAppProperties): ReactElement {
   return (
-    <Fragment>
-      <h1 className="app">App</h1>
-    </Fragment>
+    <div className="c-app">
+      <div>Header</div>
+      <Router>
+        <Switch>
+          <Route path="/" component={MainUnauthorized}/>
+        </Switch>
+      </Router>
+      <div>Footer</div>
+    </div>
   );
 }
