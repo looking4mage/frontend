@@ -58,7 +58,6 @@
     "functional/no-conditional-statement": "off",
     "functional/no-expression-statement": "off",
     "functional/prefer-type-literal": "off",
-    "indent": ["error", 2],
     "jsx-quotes": ["error", "prefer-double"],
     "linebreak-style": ["error", "unix"],
     "newline-before-return": "error",

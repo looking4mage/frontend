@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.c-register {
+  width: 480px;
+  margin: auto;
+  padding: $global-space;
+  background-color: #ffffff;
+  border-radius: 2px;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-row-gap: $global-space;
+    margin: $global-space 0;
+  }
+
+  &__login {
+    margin-top: $global-space;
+    text-align: center;
+
+    &--link {
+      cursor: pointer;
+    }
+  }
+}
