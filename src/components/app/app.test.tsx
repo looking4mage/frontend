@@ -8,7 +8,7 @@ describe(App, () => {
   it('check if main page for unauthorized users is loading', () => {
     const wrapper = mount(
       <MemoryRouter initialEntries={['/']}>
-        <App/>
+        <App />
       </MemoryRouter>,
     );
     expect(wrapper.find(MainUnauthorized)).toHaveLength(1);

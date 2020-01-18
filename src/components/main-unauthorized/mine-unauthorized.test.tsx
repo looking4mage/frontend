@@ -5,7 +5,7 @@ import { MainUnauthorized } from './main-unauthorized';
 
 describe(MainUnauthorized, () => {
   it('should parse component correctly', () => {
-    const markup = shallow(<MainUnauthorized/>);
+    const markup = shallow(<MainUnauthorized />);
     expect(markup.html()).toContain('c-main-unauthorized');
   });
 });

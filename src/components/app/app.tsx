@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { MainUnauthorized } from '../main-unauthorized';
 import './app.scss';
 
@@ -14,7 +14,7 @@ export function App(_props: IAppProperties): ReactElement {
       <div>Header</div>
       <Router>
         <Switch>
-          <Route path="/" component={MainUnauthorized}/>
+          <Route path="/" component={MainUnauthorized} />
         </Switch>
       </Router>
       <div>Footer</div>
