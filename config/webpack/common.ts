@@ -1,26 +1,21 @@
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
-const NODE_ENV =
-  process.env.NODE_ENV === 'production' ? 'production' : 'development';
-
 const config: webpack.Configuration = {
-  devtool: 'source-map',
-
   entry: {
-    main: ['./src/index.tsx'],
+    main: [path.resolve(__dirname, '..', '..', 'src', 'index.tsx')],
   },
 
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-  },
-
-  mode: NODE_ENV,
+  // externals: {
+  //   react: 'React',
+  //   'react-dom': 'ReactDOM',
+  // },
 
   module: {
     rules: [
@@ -66,14 +61,24 @@ const config: webpack.Configuration = {
 
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '..', '..', 'dist'),
     publicPath: '/',
   },
 
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      hash: true,
+      template: 'src/index.html',
+      title: 'Looking 4 Mage',
+    }),
+  ],
+
   resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
+
+  target: 'web',
 };
 
 export default config;
