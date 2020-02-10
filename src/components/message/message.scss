@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.c-message {
+  background-color: #9dcaff;
+  padding: $global-space;
+
+  &__user {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: $global-space;
+    font-size: 1.125rem;
+
+    &--date {
+      margin-left: $global-space;
+      font-size: 0.75rem;
+    }
+  }
+
+  &__content {
+    font-size: 1rem;
+  }
+}
