@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+.c-group-chat {
+  &__container {
+    display: grid;
+    padding: $global-space 0;
+    grid-template-columns: 1fr;
+    grid-row-gap: $global-space;
+  }
+}
