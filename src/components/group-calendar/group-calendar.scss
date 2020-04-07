@@ -1,0 +1,70 @@
+@import "../../styles/variables";
+
+.c-group-calendar {
+
+  &__header {
+    margin-bottom: $global-space;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(7, max-content);
+    grid-row-gap: $global-space;
+    grid-column-gap: $global-space;
+  }
+
+  &__day {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &--content {
+      pointer-events: none;
+      z-index: 1;
+      align-self: center;
+      text-shadow: 1px 1px #000000;
+      color: #f5ffff;
+    }
+  }
+
+  &__selection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000066;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+
+    &--available {
+      background-color: #05a1d9;
+
+      &:hover {
+        background-color: #05b0ed;
+      }
+    }
+
+    &--uncertain {
+      background-color: #bdb232;
+
+      &:hover {
+        background-color: #e4d63c;
+      }
+    }
+
+    &--absent {
+      background-color: #830000;
+
+      &:hover {
+        background-color: #b30000;
+      }
+    }
+
+    &--available, &--uncertain, &--absent {
+      cursor: pointer;
+    }
+  }
+}
