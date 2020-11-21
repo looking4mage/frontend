@@ -1,16 +1,15 @@
 import { mount } from 'enzyme';
 import React from 'react';
-
-import { MainUnauthorized } from './main-unauthorized';
+import { Communities } from './communities';
 import { MemoryRouter } from 'react-router';
 
-describe(MainUnauthorized, () => {
+describe(Communities, () => {
   it('should parse component correctly', () => {
     const wrapper = mount(
       <MemoryRouter>
-        <MainUnauthorized />
+        <Communities />
       </MemoryRouter>,
     );
-    expect(wrapper.html()).toContain('c-main-unauthorized');
+    expect(wrapper.html()).toContain('c-communities');
   });
 });
