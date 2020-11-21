@@ -6,6 +6,7 @@ import { MainUnauthorized } from '../main-unauthorized';
 import { Register } from '../register';
 import './app.scss';
 import { Group } from '../group';
+import { Header } from '../header';
 
 interface IAppProperties {
   readonly className?: string;
@@ -14,8 +15,8 @@ interface IAppProperties {
 export function App(_props: IAppProperties): ReactElement {
   return (
     <div className="c-app">
-      <div>Header</div>
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/" component={MainUnauthorized} />
           <Route path="/register" component={Register} />
